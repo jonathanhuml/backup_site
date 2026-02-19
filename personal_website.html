@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JRH's Home Page</title>
+  <style>
+    /* 90s-ish: simple system fonts, bright links, tight layout, hard borders */
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --link: #0000ee;
+      --visited: #551a8b;
+      --accent: #ff00ff;
+      --border: #000000;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Times New Roman", Times, serif;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    /* Centered “content column” like old personal sites */
+    .page {
+      max-width: 760px;
+      margin: 24px auto;
+      padding: 12px;
+    }
+
+    /* Big, unapologetic header */
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 34px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .tagline {
+      margin: 0 0 14px 0;
+      font-style: italic;
+    }
+
+    /* Classic horizontal rule vibe */
+    hr {
+      border: 0;
+      border-top: 2px solid var(--border);
+      margin: 14px 0;
+    }
+
+    /* Old-school “box” */
+    .box {
+      border: 2px solid var(--border);
+      padding: 10px;
+      background: #f7f7f7;
+    }
+
+    .photo {
+      display: block;
+      width: 300px;      /* ← change this */
+      height: auto;      /* keeps proportions correct */
+      border: 3px solid #000;
+    }
+
+    /* Small caption like Geocities pages */
+    .caption {
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    /* 90s links */
+    a:link { color: var(--link); }
+    a:visited { color: var(--visited); }
+    a:hover { background: #ffff00; }
+
+    /* Tiny “nav” */
+    .nav {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    /* Fun little “under construction” feel without images */
+    .blink {
+      animation: blink 1s steps(2, start) infinite;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    @keyframes blink { to { visibility: hidden; } }
+
+    footer {
+      margin-top: 14px;
+      font-size: 13px;
+    }
+
+    .mono {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <h1>Welcome </h1>
+    <ul class="nav" aria-label="Site links">
+      <li><a href="#photo">Photo</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+    <p> Thanks for visiting my website!</p>
+
+
+
+    <!-- Put your image file next to index.html, and name it photo.jpg (or change the src) -->
+    <img class="photo" src="photo.jpg" alt="A personal photograph of me" />
+
+    <div class="caption">
+      <span class="mono">photo.jpg</span> — last updated: <span class="mono">1998-ish</span> ✨
+    </div>
+
+
+    <section id="News">
+      <h3>Releases</h3>
+       <span class="blink">!ZUNA!</span>
+      <p>We just released <a href="">ZUNA</a></p>
+      
+    </section>
+  
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Howdy! I'm an engineer working on brain-computer interfaces at <a href="https://www.zyphra.com/">Zyphra</a> in downtown San Francisco.  </p>
+      <p>
+        Originally, I'm from Durham, North Carolina. 
+      </p>
+      <p> I studied Mathematics (B.A.) and Statistics (B.S.) at UNC-Chapel Hill, where I began my research in computer vision for autonomous vehicles.</p>
+      <p>I then moved to Boston for the Computational Engineering program at Harvard University, conducting research in the <a href="https://crisp.seas.harvard.edu/">CRISP Group</a> where
+      I developed a passion for computational neuroscience. </p>
+      
+    </section>
+
+    <hr />
+
+    <section id="links" class="box">
+      <h2 style="margin:0 0 10px 0;">Links</h2>
+      <p style="margin:0 0 8px 0;">You can put anything here (or delete this section entirely):</p>
+      <ul style="margin:0; padding-left:18px;">
+        <li><a href="mailto:you@example.com">Email me</a></li>
+        <li><a href="#">My projects</a> (coming soon)</li>
+        <li><a href="#">My notes</a> (also coming soon)</li>
+      </ul>
+    </section>
+
+    <footer>
+      <hr />
+      <div class="mono">
+        © <span id="year">1999</span> JRH •
+        made with <span style="color:var(--accent);">pure HTML + CSS</span>
+      </div>
+      <noscript class="mono">JavaScript is off (good). The year is timeless.</noscript>
+    </footer>
+  </div>
+
+  <!-- Optional: remove this tiny script if you want *absolutely* no JS.
+       It only updates the year. Delete it for full 90s purity. -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
